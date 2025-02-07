@@ -106,6 +106,8 @@ app.post('/post', uploadMiddleware.single('file'), async (req,res) => {
 
 });
 
+//Middleware
+
 app.put('/post', uploadMiddleware.single('file'),async (req,res)=> {
     let newPath = null;
     if (req.file){
@@ -160,6 +162,7 @@ app.get('/post', async (req,res) => {
 
 });
 
+//Finding the post in the database
 app.get('/post/:id', async(req,res)=>{
     const {id} =req.params;
     console.log(req.params)
